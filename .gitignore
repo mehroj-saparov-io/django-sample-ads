@@ -1,0 +1,52 @@
+# ======================
+# Python
+# ======================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.eggs/
+
+# ======================
+# Virtual Environment
+# ======================
+venv/
+.env/
+
+# ======================
+# Django
+# ======================
+*.log
+db.sqlite3
+media/
+staticfiles/
+
+# Django migrations (agar saqlamoqchi bo‘lsang o‘chir)
+# **/migrations/
+
+# ======================
+# VS Code
+# ======================
+.vscode/
+.history/
+
+# ======================
+# OS files
+# ======================
+.DS_Store
+Thumbs.db
+
+# ======================
+# PyCharm (agar kimdir ishlatsa)
+# ======================
+.idea/
+
+# ======================
+# dotenv
+# ======================
+.env
+.env.local
+.env.dev
+.env.prod
