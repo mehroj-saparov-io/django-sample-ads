@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}All Ads | AdsBoard{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/ads_list.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="ads-header">
+    <h1>All Ads</h1>
+
+    {% if q %}
+        <p>
+            "{{ q }}" bo‘yicha natijalar
+        </p>
+    {% else %}
+        <p>Browse all published ads</p>
+    {% endif %}
+</section>
+
+<section class="ads-list">
+    {% for ad in page_obj %}
+        <div class="ad-row">
+            <div class="ad-info">
+                <h3>{{ ad.title|truncatechars:50 }}</h3>
+                <p>{{ ad.description|truncatechars:150 }}</p>
+
+                <small>
+                    🕒 {{ ad.created_at|date:"d M Y" }}
+                </small>
+            </div>
+
+            <div class="ad-action">
+                <a href="{% url 'ads_detail' ad.slug %}">
+                    View →
+                </a>
+            </div>
+        </div>
+    {% empty %}
+        <p>No ads found.</p>
+    {% endfor %}
+</section>
+
+<!-- ===== PAGINATION ===== -->
+{% if page_obj.paginator.num_pages > 1 %}
+<div class="pagination">
+    {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}{% if q %}&q={{ q }}{% endif %}">
+            ← Previous
+        </a>
+    {% endif %}
+
+    <span>
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+    </span>
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}{% if q %}&q={{ q }}{% endif %}">
+            Next →
+        </a>
+    {% endif %}
+</div>
+{% endif %}
+
+{% endblock %}

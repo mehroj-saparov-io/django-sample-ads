@@ -1,1 +1,41 @@
-<h1>Simple Ads Website</h1>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home | AdsBoard{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <h1>Welcome to AdsBoard</h1>
+    <p>Find latest ads or publish your own in minutes.</p>
+</section>
+
+<section class="ads-section">
+    <h2>Latest Ads</h2>
+
+    <div class="ads-grid">
+        {% for ad in ads %}
+            <div class="ad-card">
+                <h3>{{ ad.title|truncatechars:35 }}</h3>
+                <p>{{ ad.description|truncatechars:90 }}</p>
+
+                <div class="ad-footer">
+                    <span class="date">
+                        {{ ad.created_at|date:"d M Y" }}
+                    </span>
+                    <a href="{% url 'ads_detail' ad.slug %}">
+                        View →
+                    </a>
+                </div>
+            </div>
+        {% empty %}
+            <p>No ads yet.</p>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

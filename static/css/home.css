@@ -1,0 +1,85 @@
+/* ===== HERO ===== */
+.hero {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* ===== ADS SECTION ===== */
+.ads-section h2 {
+    margin-bottom: 20px;
+}
+
+/* ===== GRID ===== */
+.ads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* ===== CARD ===== */
+.ad-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ad-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.ad-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.ad-card p {
+    color: #555;
+    flex-grow: 1;
+}
+
+/* ===== CARD FOOTER ===== */
+.ad-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.ad-footer .date {
+    font-size: 13px;
+    color: #888;
+}
+
+.ad-footer a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #2563eb;
+}
+
+.ad-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+}

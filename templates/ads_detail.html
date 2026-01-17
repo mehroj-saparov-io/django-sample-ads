@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ ad.title }} | AdsBoard{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/ads_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% if error %}
+    <p>{{ error }}</p>
+{% else %}
+<section class="ad-detail">
+
+    <div class="ad-main">
+        <h1>{{ ad.title }}</h1>
+        <p class="date">
+            🕒 {{ ad.created_at|date:"d M Y, H:i" }}
+        </p>
+
+        <div class="description">
+            {{ ad.description|linebreaks }}
+        </div>
+    </div>
+
+    <aside class="ad-contact">
+        <h3>Contact seller</h3>
+
+        <p>📞 {{ ad.phone }}</p>
+        <p>✉️ {{ ad.email }}</p>
+
+        <a href="{% url 'ads_list' %}" class="back-link">
+            ← Back to ads
+        </a>
+    </aside>
+
+</section>
+{% endif %}
+
+{% endblock %}

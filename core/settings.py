@@ -133,7 +133,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 if DJANGO_DEBUG == 'development':
-    STATICFILES_DIR = [
+    STATICFILES_DIRS = [
         BASE_DIR / 'static'
     ]
 elif DJANGO_DEBUG == 'production':

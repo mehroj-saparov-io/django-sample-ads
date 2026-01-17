@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Create Ad | AdsBoard{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/ads_create.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="create-wrapper">
+    <h1>Create New Ad</h1>
+
+    <form method="post" class="create-form">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label>Title</label>
+            {{ form.title }}
+            {% if form.title.errors %}
+                <small class="error">{{ form.title.errors.0 }}</small>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label>Description</label>
+            {{ form.description }}
+            {% if form.description.errors %}
+                <small class="error">{{ form.description.errors.0 }}</small>
+            {% endif %}
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label>Phone</label>
+                {{ form.phone }}
+                {% if form.phone.errors %}
+                    <small class="error">{{ form.phone.errors.0 }}</small>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                {{ form.email }}
+                {% if form.email.errors %}
+                    <small class="error">{{ form.email.errors.0 }}</small>
+                {% endif %}
+            </div>
+        </div>
+
+        <button type="submit" class="btn-submit">
+            Publish Ad
+        </button>
+    </form>
+</section>
+
+{% endblock %}

@@ -1,0 +1,112 @@
+/* ===== HEADER ===== */
+.ads-header {
+    margin-bottom: 40px;
+}
+
+.ads-header h1 {
+    margin-bottom: 5px;
+}
+
+.ads-header p {
+    color: #555;
+}
+
+/* ===== LIST ===== */
+.ads-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ===== ROW ===== */
+.ad-row {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.ad-row:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== INFO ===== */
+.ad-info h3 {
+    margin: 0 0 8px;
+    color: #222;
+}
+
+.ad-info p {
+    margin: 0 0 6px;
+    color: #555;
+}
+
+.ad-info small {
+    color: #888;
+    font-size: 13px;
+}
+
+/* ===== ACTION ===== */
+.ad-action a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #2563eb;
+}
+
+.ad-action a:hover {
+    text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 700px) {
+    .ad-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ad-action {
+        align-self: flex-end;
+    }
+}
+
+/* ===== PAGINATION ===== */
+.pagination {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.pagination a {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    text-decoration: none;
+    color: #2563eb;
+    font-size: 14px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.pagination a:hover {
+    background: #2563eb;
+    color: #fff;
+}
+
+.pagination span {
+    font-size: 14px;
+    color: #374151;
+}
+
+@media (max-width: 500px) {
+    .pagination {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

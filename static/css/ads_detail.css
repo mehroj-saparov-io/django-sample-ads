@@ -1,0 +1,82 @@
+/* ===== PAGE BACKGROUND ===== */
+body {
+    background: #f9fafb;
+}
+
+/* ===== LAYOUT ===== */
+.ad-detail {
+    margin-top: 32px; /* header bilan yopishmasligi uchun */
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* ===== MAIN ===== */
+.ad-main {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.ad-main h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 28px;
+    color: #111827;
+}
+
+.ad-main .date {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.description {
+    line-height: 1.7;
+    color: #374151;
+    font-size: 16px;
+}
+
+/* ===== CONTACT ===== */
+.ad-contact {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    height: fit-content;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.ad-contact h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+.ad-contact p {
+    margin: 10px 0;
+    font-weight: 500;
+    color: #111827;
+}
+
+/* ===== BACK LINK ===== */
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .ad-detail {
+        grid-template-columns: 1fr;
+        margin-top: 24px;
+    }
+}
