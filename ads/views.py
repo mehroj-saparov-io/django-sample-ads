@@ -56,3 +56,7 @@ class CreateAdsView(View):
             return redirect('ads_detail', slug=ad.slug)
 
         return render(request, 'ads_create.html', {'form': form})
+
+class ContactAdminView(View):
+    def get(self, request: HttpRequest) -> HttpResponse:
+        return render(request, 'contact_admin.html')

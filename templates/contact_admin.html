@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Contact Admin | AdsBoard{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/contact_admin.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="contact-admin">
+    <h1>Contact Admin</h1>
+
+    <p class="subtitle">
+        If you need to remove an ad or report a problem, please contact the administrator
+        using the details below.
+    </p>
+
+    <div class="contact-card">
+        <div class="contact-item">
+            <span>📞</span>
+            <div>
+                <small>Phone</small>
+                <strong>+998-50-077-36-66</strong>
+            </div>
+        </div>
+
+        <div class="contact-item">
+            <span>✉️</span>
+            <div>
+                <small>Email</small>
+                <strong>saparov.inbox@gmail.com</strong>
+            </div>
+        </div>
+    </div>
+
+    <p class="note">
+        Ads are automatically removed after <strong>30 days</strong>.
+        To request early removal, please include the ad title or link in your message.
+    </p>
+</section>
+
+{% endblock %}
